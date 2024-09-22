@@ -76,8 +76,13 @@ class Library {
     }
 
     public void displayBooks() {
-        for (Book book : books) {
-            System.out.println(book);
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+        } else {
+            System.out.println("Books in the library:");
+            for (int i = 0; i < books.size(); i++) {
+                System.out.println((i + 1) + (books.get(i).isIssued() ? "(Issued)" : "(Available)"));
+            }
         }
     }
 }
