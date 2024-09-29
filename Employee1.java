@@ -8,19 +8,19 @@ package chapter10;
  *
  * @author Lenovo S540
  */
-public abstract class Employee {
+public abstract class Employee1 implements Payable {
     private final String firstName;
     private final String lastName;
     private final String socialSecurityNumber;
 
-    public Employee(String firstName, String lastName,
-    String socialSecurityNumber){
+    public Employee1(String firstName, String lastName,
+                    String socialSecurityNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
-    public String getFirstName() {
+    public String getFirstName(){
         return firstName;
     }
 
@@ -33,10 +33,8 @@ public abstract class Employee {
     }
 
     @Override
-    public  String toString(){
+    public String toString() {
         return String.format("%s %s%nsocial security number: %s",
                 getFirstName(), getLastName(), getSocialSecurityNumber());
     }
-
-    public abstract double earnings();
 }
